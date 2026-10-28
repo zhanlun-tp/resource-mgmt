@@ -3,6 +3,10 @@ var bodyParser = require("body-parser");
 var app = express();
 const PORT = process.env.PORT || 5050
 var startPage = "index.html";
+
+const { addResource } = require('./utils/addResourceUtil')
+app.post('/add-resource', addResource);
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("./public"));
