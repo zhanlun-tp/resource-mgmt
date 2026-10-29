@@ -10,6 +10,10 @@ app.use(bodyParser.json());
 const { addResource } = require('./utils/addResourceUtil')
 app.post('/add-resource', addResource);
 app.use(express.static("./public"));
+
+const { viewResources } = require('./utils/ViewResourceUtil')
+app.get('/view-resources', viewResources)
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/" + startPage);
 })
