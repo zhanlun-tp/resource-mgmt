@@ -4,11 +4,11 @@ var app = express();
 const PORT = process.env.PORT || 5050
 var startPage = "index.html";
 
-const { addResource } = require('./utils/addResourceUtil')
-app.post('/add-resource', addResource);
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+const { addResource } = require('./utils/addResourceUtil')
+app.post('/add-resource', addResource);
 app.use(express.static("./public"));
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/" + startPage);
