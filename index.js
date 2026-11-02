@@ -11,7 +11,8 @@ const { addResource } = require('./utils/addResourceUtil')
 app.post('/add-resource', addResource);
 app.use(express.static("./public"));
 
-const { viewResources } = require('./utils/ViewResourceUtil')
+const { viewResources } = require('./utils/viewResourceUtil')
+const { viewResources } = require('./utils/viewResourceUtil')
 app.get('/view-resources', viewResources)
 
 app.get('/', (req, res) => {

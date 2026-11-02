@@ -14,6 +14,8 @@ function viewResources() {
                 '<td>' + response[i].description + '</td>' +
                 '<td>' + response[i].owner + '</td>' +
                 '<td>' +
+                '<button type="button" class="btn btn-warning"onclick = "editResource(\'' + JSON.stringify(response[i]).replaceAll('\"', '&quot;') + '\')">Edit </button> ' +
+                '<button type="button" class="btn btn-danger"onclick = "deleteResource(\'' + response[i].id + '\')" > Delete< /button > ' + '</td>' +'</tr>'
                 '<button type="button" class="btn btn-warning"onclick = "editResource(\'' + JSON.stringify(response[i]).replaceAll('\"',
             '&quot;') + '\')">Edit </button> ' +
                 '<button type="button" class="btn btn-danger"onclick = "deleteResource(\'' + response[i].id + '\')" > Delete</button > ' +
