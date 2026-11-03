@@ -11,6 +11,11 @@ const { addResource } = require('./utils/addResourceUtil')
 app.post('/add-resource', addResource);
 app.use(express.static("./public"));
 
+const { editResource } = require('./utils/editResourceUtil');
+app.put('/edit-resource/:id', editResource);
+const { deleteResource } = require('./utils/deleteResourceUtil');
+app.delete('/delete-resource/:id', deleteResource);
+
 const { viewResources } = require('./utils/viewResourceUtil')
 app.get('/view-resources', viewResources)
 
